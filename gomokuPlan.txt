@@ -1,0 +1,59 @@
+# to compile: python ./gomoku.py
+
+#TODO List
+# Board 19x19
+#   array (x-axis) filled with arrays (y-axis)
+#   |0|1|2|3|
+#   |1|
+#   |2|
+#   |3|
+
+# Pieces (ex. black)
+#   Class Piece{
+#       type;string = 'B'
+#   }
+
+# Input (x-axis, y-axis)
+#   x-axis = main array
+#   y-axis = within main array
+
+# Check piece placement
+#   check if square is already occupied
+
+# Check if win
+#   Start checking after 5 pieces have been placed each
+#   Vertical: 2 loops
+#           1. Store newly placed myPiece coordinates
+#           2. Go up until not myPiece (main[x].inner[y-#]) or # == 4. Store number in isFive(int)
+#           3. If isFive != 5, continue to step 4
+#           4. Go down until not myPiece (main[x].inner[y+#]) or # == 4. Add number to isFive
+#           5. If isFive != 5, return false, else return true
+#   Horizonal: 2 loops
+#           1. Store newly placed myPiece coordinates
+#           2. Go left until not myPiece (main.[x-#].inner[y]) or # == 4. Store number in isFive(int)
+#           3. If isFive != 5, continue to step 4
+#           4. Go right until not myPiece (main[x+#].inner[y]) or # == 4. Add number to isFive
+#           5. If isFive != 5, return false, else return true
+#   Diagonal l->r:
+#           1. Store newly placed myPiece coordinates
+#           2. Go left+up until not myPiece (main.[x-#].inner[y-#]) or # == 4. Store number in isFive(int)
+#           3. If isFive !=5, continue to step 4
+#           4. Go right+down until not myPiece (main.[x+#].inner[y+#]) or # == 4. Add number to isFive
+#           5. If isFive != 5, return false, else return true
+#   Diangonal r->l:
+#           1. Store newly placed myPiece coordinates
+#           2. Go left+down until not myPiece (main.[x-#].inner[y+#]) or # == 4. Store number in isFive(int)
+#           3. If isFive !=5, continue to step 4
+#           4. Go right+up until not myPiece (main.[x+#].inner[y-#]) or # == 4. Add number to isFive
+#           5. If isFive != 5, return false, else return true
+
+class gomoku:
+    blackPiece = 'B'
+    whitePiece = 'W'
+    x = 19
+    y = 19
+    main = [['E'] * y for i in range(x)]
+
+    def printBoard:
+        
+
